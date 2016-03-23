@@ -18,11 +18,14 @@ int main(int argc, char **argv)
 char **charSquare(int n)
 {
 	char **square=new char*[n];
-	for(int i=0,j=0; i<n*n; i++)
+	for(int i=0; i<n; i++)
 	{
 		square[i]=new char [n];
-		square[i][j]=rand()%26+'a'; 
 	}
+
+	for (int i = 0; i < n*n; ++i)
+		square[i/n][i%n]=rand()%26+'a'; 
+	
 	//I'm so close of doing this in one instruction	:( / :)
 
 	return square;
@@ -30,12 +33,8 @@ char **charSquare(int n)
 
 void drawCharSquare(char **square, int n)
 {
-	for(int i=0; i<n*n; i++ )
-	{
-		if (i%n==0) 
-			printf(" line no.%i\n",i);
-		printf("%c ",**(square+i) );
-	}
+	for(int i=0; i < n*n; i++ )
+			printf("%c%c",square[i/n][i%n], (i%n!=n-1) ? ' ' : '\n');
 }
 
 /*
