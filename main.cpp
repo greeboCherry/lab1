@@ -5,7 +5,7 @@
 char **charSquare(int n);
 void drawCharSquare(char **square, int n);
 //void createAndDrawCharSquare(int n); 
-//this appered here as effect of misunderstanding instruction for best mark, I'll lest this stay here for next generations browsing this repo
+//this appered here as effect of misunderstanding instruction for best mark, I'll let this stay here for next generations browsing this repo
 
 int main(int argc, char **argv)
 {
@@ -22,12 +22,8 @@ char **charSquare(int n)
 	{
 		square[i]=new char [n];
 	}
-
 	for (int i = 0; i < n*n; ++i)
 		square[i/n][i%n]=rand()%26+'a'; 
-	
-	//I'm so close of doing this in one instruction	:( / :)
-
 	return square;
 }
 
